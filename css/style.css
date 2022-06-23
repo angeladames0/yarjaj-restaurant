@@ -650,3 +650,28 @@ p{
   outline:0;
   border: 1px solid var(--main-color);
 }
+
+.img{
+    width: 150px;
+    height: auto;
+    margin: auto;
+    display: inline;
+    border-radius: 50%;
+    box-shadow: 5px 5px 7px black;
+    padding:  10px;
+}
+.hijo{
+    flex-direction: column;
+    display: inline-block;
+    justify-content:space-around;
+    align-items: center;
+    margin: 11%;
+    height: 5vh;
+}
+p{
+    text-align: center;
+    font-family: sans-serif;
+}
+h2{
+    text-align: center;
+}

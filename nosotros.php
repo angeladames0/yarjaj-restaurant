@@ -11,9 +11,7 @@ session_start();
     <title>Nosotros - Restaurante YARJAJ</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="css/style.css">
-
-
-
+    <link rel="stylesheet" href="nosotros.css">
 
 </head>
 
@@ -39,6 +37,7 @@ session_start();
     echo "<a href=\"login.php\" class=\"btn2\">Iniciar Sesion</a>"; ?> 
 
     </header>
+    <br>
     <section class="services" id="services">
         <div class="heading">
             <span>Nosotros</span>
@@ -65,7 +64,39 @@ session_start();
         </div>
     </div>
 </section>
-
+<div class="Padre">
+        <!-- Adan -->
+        <h2>Desarrolladores</h2> 
+            <div  class="hijo">
+                <img class="img" src="img/adan.jpeg">
+                <p>Back-End developer</p>
+            </div>
+        <!-- Angel -->
+            <div class= "hijo">
+            <img class="img" src="img/angel.jpeg">
+            <p>Back-End developer</p>
+            </div>
+              <!-- Joan -->
+         <div class= "hijo">
+            <img class="img" src="img/Joan.jpeg">
+            <p>Manejador de BD</p>
+            </div>
+        <!-- Raymond -->
+         <div class= "hijo">
+            <img class="img" src="img/Raymond.jpeg">
+            <p>Back-End developer</p>
+            </div>
+         <!-- Juan -->
+            <div class= "hijo">
+            <img class="img" src="img/Juan.jpeg">
+            <p>Front-end developer</p>
+            </div>
+        <!-- Yomar -->
+            <div class= "hijo">
+            <img class="img" src=".jpeg">
+            <p>Front-end developer</p>
+            </div>
+        </div>
         <!-- Footer-->
         <section class="contact" id="contact">
             <div class="contact-box">
