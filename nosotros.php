@@ -33,6 +33,8 @@ session_start();
 
         </ul>
 
+    <?php if(isset($_SESSION['session_admin']))
+    echo "<a href=\"admin.php\" class=\"btn2\">Admin</a>"; ?> 
     <?php if(isset($_SESSION['session_usuario']))
     echo "<a href=\"includes/desloguear.php\" class=\"btn2\">Cerrar Sesión</a>"; ?> 
     <?php if(!isset($_SESSION['session_usuario']))

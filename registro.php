@@ -13,11 +13,12 @@ $con=conectar();
 
 if(isset($_POST["registro"])){
 
-if(!empty($_POST["usuario"])  && !empty($_POST["nombre"]) && !empty($_POST["contrasena"]) && !empty($_POST["email"])) {
+if(!empty($_POST["usuario"])  && !empty($_POST["nombre"]) && !empty($_POST["contrasena"]) && !empty($_POST["email"]) && !empty($_POST["id_cargo"])) {
 $usuario=$_POST["usuario"];
 $nombre=$_POST["nombre"];
 $contrasena=$_POST["contrasena"];
 $email=$_POST["email"];
+$id_cargo =$_POST["id_cargo"];
 
 $chequsuario = "SELECT * FROM LOGIN WHERE USUARIO= '$usuario'";
 $cheqemail = "SELECT * FROM LOGIN WHERE EMAIL= '$email'";
@@ -30,8 +31,8 @@ $numrows2=mysqli_num_rows($query2);
 if($numrows==0 & $numrows2==0)
 {
 $sql="INSERT INTO LOGIN
-(USUARIO, NOMBRE, CONTRASENA, EMAIL)
-VALUES('$usuario', '$nombre', '$contrasena', '$email')";
+(USUARIO, NOMBRE, CONTRASENA, EMAIL, id_cargo)
+VALUES('$usuario', '$nombre', '$contrasena', '$email', '$id_cargo')";
 
 $result=mysqli_query($con, $sql);
 
@@ -89,6 +90,7 @@ $message = "Todos los campos no deben de estar vacios!";
 		      		<div class="form-group">
 		      		<input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico" required>
 		      		</div>
+					
 	            <div class="form-group">
 	              <input id="contrasena" name="contrasena" type="password" class="form-control" placeholder="Contraseña" required>
 	              <span toggle="#contrasena" class="fa fa-fw fa-eye field-icon toggle-password"></span>
@@ -97,6 +99,9 @@ $message = "Todos los campos no deben de estar vacios!";
 	            	    <input id="contrasena2" type="password" class="form-control" placeholder="Confirmar contraseña" required>
 	              <span toggle="#contrasena2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	              </div>
+				  <div class="form-group">
+		      		<input type="idcargo" class="form-control" id="id_cargo" name="id_cargo" placeholder="Privilegio del usuario" required>
+		      		</div>
 	            <div class="form-group">
 	            	<button type="submit" name="registro" id="registro" class="form-control btn">Registrarse</button>
 	            </div>

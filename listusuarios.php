@@ -1,5 +1,10 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION["session_admin"])){
+header("Location: index.php");
+}
+
 if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != '')) {
 
         header ("Location: login.php");
@@ -55,6 +60,7 @@ if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != ''
                                         <th>NOMBRE</th>
                                         <th>CONTRASENA</th>
                                         <th>EMAIL</th>
+                                        <th>CARGO</th>
                                         </th>
                                     </tr>
                                 </thead>
@@ -66,8 +72,9 @@ if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != ''
                                             <tr>
                                                 <td><?php  echo $row['USUARIO']?></td> 
                                                 <td><?php  echo $row['NOMBRE']?></td> 
-                                                <td><?php  echo $row['CONTRASENA']?></td>  
-                                                <td><?php  echo $row['EMAIL']?></td>  
+                                                <td><?php  echo $row['CONTRASENA']?></td>
+                                                <td><?php  echo $row['EMAIL']?></td>
+                                                <td><?php  echo $row['id_cargo']?></td>  
                                                  <th><a href="admin/acts/actualizarusuario.php?id=<?php echo $row['USUARIO']?>" class="btn btn-success">Editar</a></th>
                                                 <th><a href="admin/deletes/borrarusuario.php?id=<?php echo $row['USUARIO']?>" class="btn btn-danger">Eliminar</a></th>                                        
                                             </tr>

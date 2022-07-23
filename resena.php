@@ -46,7 +46,7 @@ $row=mysqli_fetch_array($query)
 
         </ul>
 
-    <?php if(isset($_SESSION['session_usuario']))
+    <?php if(isset($_SESSION['session_admin']))
     echo "<a href=\"admin.php\" class=\"btn2\">Admin</a>"; ?> 
     <?php if(isset($_SESSION['session_usuario']))
     echo "<a href=\"includes/desloguear.php\" class=\"btn2\">Cerrar Sesión</a>"; ?> 
@@ -104,12 +104,13 @@ $row=mysqli_fetch_array($query)
 
                                     <?php
 $resultado= mysqli_query($con, 'SELECT * FROM RESENAS');
+$resultado2= mysqli_query($con, 'SELECT * FROM LOGIN');
 
-while($comentario = mysqli_fetch_object($resultado)){
+while($comentario = mysqli_fetch_object($resultado) AND $comentario2 = mysqli_fetch_object($resultado2)){
 
     ?>
 
-    <b><?php echo($comentario->USUARIO);  ?></b> - Califico <?php echo($comentario->CALIFICACION);  ?>★ y comento: 
+    <b><?php echo($comentario2->NOMBRE);  ?></b> - Califico <?php echo($comentario->CALIFICACION);  ?>★ y comento: 
     <br/>
     <?php echo ($comentario->COMENTARIO);?>
     <br/>

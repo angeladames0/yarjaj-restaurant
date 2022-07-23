@@ -1,11 +1,14 @@
 <?php
 session_start();
+if(!isset($_SESSION["session_admin"])){
+header("Location: index.php");
+}
 ?>
 <?php require_once("includes/conexion.php"); ?>
 <?php
     $con=conectar();
 
-$sql = "SELECT * FROM REGISTRO";
+$sql = "SELECT * FROM LOGIN";
 $query=mysqli_query($con, $sql);
 
 ?>
@@ -36,11 +39,13 @@ $query=mysqli_query($con, $sql);
             <li><a href="nosotros.php">Nosotros</a></li>
             <?php if(isset($_SESSION['session_usuario']))
     echo "<li><a href=\"sugerencia.php\">Sugerencia</a></li>"; ?> 
+    <?php if(isset($_SESSION['session_usuario']))
+    echo "<li><a href=\"resena.php\">Reseña</a></li>"; ?> 
             <div class="bx bx-moon" id="darkmode"></div>
 
         </ul>
 
-    <?php if(isset($_SESSION['session_usuario']))
+    <?php if(isset($_SESSION['session_admin']))
     echo "<a href=\"admin.php\" class=\"btn2\">Admin</a>"; ?> 
     <?php if(isset($_SESSION['session_usuario']))
     echo "<a href=\"includes/desloguear.php\" class=\"btn2\">Cerrar Sesión</a>"; ?> 

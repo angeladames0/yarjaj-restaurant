@@ -20,6 +20,18 @@ $sql = "SELECT * FROM LOGIN WHERE USUARIO= '$usuario' AND CONTRASENA= '$contrase
 
 $query= mysqli_query($con, $sql);
 $numrows=mysqli_num_rows($query);
+$numrows= mysqli_fetch_array($query);
+if ($numrows['id_cargo']==1) {//admin
+	$_SESSION["session_admin"]=$usuario;
+	$_SESSION["session_usuario"]=$usuario;
+	header("Location: admin.php");
+}
+else 
+if($numrows['id_cargo']==2) {//cliente
+	$_SESSION["session_usuario"]=$usuario;
+
+
+}
 if($numrows!=0)
 
 {
@@ -32,9 +44,6 @@ $dbpassword=$row['CONTRASENA'];
 if($usuario == $dbusername && $contrasena == $dbpassword)
 
 {
-
-$_SESSION["session_usuario"]=$usuario;
-
 header("Location: index.php");
 }
 } else {
