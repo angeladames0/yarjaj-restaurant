@@ -9,9 +9,10 @@ $direccion=$_POST['direccion'];
 $informacion=$_POST['informacion'];
 $latitud=$_POST['latitud'];
 $longitud=$_POST['longitud'];
+$img=$_POST['img'];
 
 
-$sql="INSERT INTO RESTAURANTES (NOMBRE, DE, HASTA, DIRECCION, INFORMACION, LATITUD, LONGITUD) VALUES ('$nombre', '$de', '$hasta','$direccion', '$informacion', '$latitud', '$longitud')";   
+$sql="INSERT INTO RESTAURANTES (NOMBRE, DE, HASTA, DIRECCION, INFORMACION, LATITUD, LONGITUD, IMG) VALUES ('$nombre', '$de', '$hasta','$direccion', '$informacion', '$latitud', '$longitud', '$img')";   
 $query= mysqli_query($con,$sql);
 
 if($query){

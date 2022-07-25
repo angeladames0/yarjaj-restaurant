@@ -50,19 +50,19 @@ session_start();
     <div class="servives-container">
         <!-- Caja 1 -->
         <div class="s-box">
-            <img src="images/order.png" alt="">
+            <img src="img/mision.png" alt="">
             <h3>Mision</h3>
             <p>La mision de nuestra empresa es conectar con esos lugares desconocidos y apoyar de manera virtual a nuestras empresas gastronomicas para el servicios de dominicanos y extranjeros</p>
         </div>
         <!-- Caja 2 -->
         <div class="s-box">
-            <img src="images/delivery-truck.png" alt="">
+            <img src="img/vision.png" alt="">
             <h3>Vision</h3>
             <p>Esperamos poder expandirnos con los años, para ampliarnos en otros lugares del continente que de igual forma que en nuestro pais, dar a conocer esos lugares que no conforman parte de una franquicia multinacional.</p>
         </div>
         <!-- Caja 3-->
         <div class="s-box">
-            <img src="images/shipping.png" alt="">
+            <img src="img/valores.png" alt="">
             <h3>Valores</h3>
             <p> Somos conscientes de que siempre se puede mejorar y aprender. Estamos abiertos a escuchar todo aquello que el cliente nos sugiere o comenta, conformandonos los valores, de la empatia y responsabilidad con nuestra comunidad.</p>
         </div>

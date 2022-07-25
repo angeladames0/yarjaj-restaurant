@@ -21,6 +21,7 @@ $sql = "SELECT * FROM LOGIN WHERE USUARIO= '$usuario' AND CONTRASENA= '$contrase
 $query= mysqli_query($con, $sql);
 $numrows=mysqli_num_rows($query);
 $numrows= mysqli_fetch_array($query);
+
 if ($numrows['id_cargo']==1) {//admin
 	$_SESSION["session_admin"]=$usuario;
 	$_SESSION["session_usuario"]=$usuario;
@@ -29,9 +30,8 @@ if ($numrows['id_cargo']==1) {//admin
 else 
 if($numrows['id_cargo']==2) {//cliente
 	$_SESSION["session_usuario"]=$usuario;
-
-
 }
+
 if($numrows!=0)
 
 {
@@ -48,11 +48,11 @@ header("Location: index.php");
 }
 } else {
 
-$message = "Nombre de usuario ó contraseña invalida!";
+$message = "<p class=\"error\">❌ Nombre de usuario ó contraseña invalida!</p>";
 }
 
 } else {
-$message = "Todos los campos son requeridos!";
+$message = "<p class=\"alerta\">⚠️ Todos los campos son requeridos!</p>";
 }
 }
 ?>
@@ -106,7 +106,7 @@ $message = "Todos los campos son requeridos!";
 								</div>
 	            </div>
 	          </form>
-	          <?php if (!empty($message)) {echo "<p class=\"error\">" . $message . "</p>";} ?>
+	          <?php if (!empty($message)) {echo $message;} ?>
 		      </div>
 				</div>
 

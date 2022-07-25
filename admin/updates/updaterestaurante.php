@@ -11,9 +11,10 @@ $direccion=$_POST['direccion'];
 $informacion=$_POST['informacion'];
 $latitud=$_POST['latitud'];
 $longitud=$_POST['longitud'];
+$img=$_POST['img'];
 
 
-$sql="UPDATE RESTAURANTES SET  NOMBRE='$nombre', DE='$de', HASTA='$hasta', DIRECCION='$direccion', INFORMACION='$informacion', LATITUD='$latitud', LONGITUD='$longitud' WHERE ID='$id'";
+$sql="UPDATE RESTAURANTES SET  NOMBRE='$nombre', DE='$de', HASTA='$hasta', DIRECCION='$direccion', INFORMACION='$informacion', LATITUD='$latitud', LONGITUD='$longitud', IMG='$img' WHERE ID='$id'";
 $query=mysqli_query($con,$sql);
 
     if($query){

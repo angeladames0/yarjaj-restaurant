@@ -8386,3 +8386,22 @@ textarea.form-control {
     background: #c78e14;
 }
 
+.creada {
+  text-align: center;
+  color: #ffffff;
+    background: #77DD77;
+}
+
+.error {
+  text-align: center;
+  color: #ffffff;
+    background: #FF0000;
+}
+
+.alerta {
+  text-align: center;
+  color: #ffffff;
+    background: #E5BE01;
+}
+
+

@@ -52,7 +52,7 @@ session_start();
             
         </div>
         <div class="home-img">
-            <img src="img/inicio.jpg" alt="">
+            <img src="img/inicio.jpeg" alt="">
         </div>
     </section>
 
@@ -76,25 +76,25 @@ session_start();
         </div>
 
         <div class="servives-container">
-            <!-- Caja 1 -->
-            <div class="s-box">
-                <img src="images/order.png" alt="">
-                <h3>Seguridad</h3>
-                <p>Con la informacion recopilada por nuestra comunidad, le aseguramos las reseñas mas objetivas para nuestros usuarios, confiando  en la reseña de nuestros ojeadores y parte de la comunidad.</p>
-            </div>
-            <!-- Caja 2 -->
-            <div class="s-box">
-                <img src="images/delivery-truck.png" alt="">
-                <h3>Calidad</h3>
-                <p>Nos caracteriza las buenas practicas para conocer buenos, nuevos y accesibles lugares para nuestro publico conocedor de nuevas gastronomias, alcanzando un puesto excelente en la sociedad para el publico.</p>
-            </div>
-            <!-- Caja 3-->
-            <div class="s-box">
-                <img src="images/shipping.png" alt="">
-                <h3>Autenticidad</h3>
-                <p>Esta pagina es creada por un grupo de desarrolladores, involucrados con la industria gastronomica, para que las pequeñas empresas dominicanas puedan dar un salto  hacia nuevos horizontes.</p>
-            </div>
+        <!-- Caja 1 -->
+        <div class="s-box">
+            <img src="img/seguridad.png" alt="">
+            <h3>Seguridad</h3>
+            <p>Con la informacion recopilada por nuestra comunidad, le aseguramos las reseñas mas objetivas para nuestros usuarios, confiando  en la reseña de nuestros ojeadores y parte de la comunidad.</p>
         </div>
+        <!-- Caja 2 -->
+        <div class="s-box">
+            <img src="img/calidad.png" alt="">
+            <h3>Calidad</h3>
+            <p>Nos caracteriza las buenas practicas para conocer buenos, nuevos y accesibles lugares para nuestro publico conocedor de nuevas gastronomias, alcanzando un puesto excelente en la sociedad para el publico.</p>
+        </div>
+        <!-- Caja 3-->
+        <div class="s-box">
+            <img src="img/autenticidad.png" alt="">
+            <h3>Autenticidad</h3>
+            <p>Esta pagina es creada por un grupo de desarrolladores, involucrados con la industria gastronomica, para que las pequeñas empresas dominicanas puedan dar un salto  hacia nuevos horizontes.</p>
+        </div>
+    </div>
     </section>
 
  <?php if(!isset($_SESSION['session_usuario']))

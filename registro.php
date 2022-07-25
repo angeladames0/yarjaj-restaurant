@@ -36,24 +36,22 @@ VALUES('$usuario', '$nombre', '$contrasena', '$email', '$id_cargo')";
 
 $result=mysqli_query($con, $sql);
 
-
 if($result){
-$message = "Cuenta Correctamente Creada";
+$message = "<p class=\"creada\">✔ Cuenta Correctamente Creada</p>";
 } else {
-$message = "Error al ingresar datos de la informacion!";
+$message = "<p class=\"error\">❌ Error al ingresar datos de la informacion!</p>";
 }
 
 } else {
-$message = "El nombre de usuario o email ya existe! Por favor, intenta con otro!";
+$message = "	<p class=\"alerta\">⚠️ El nombre de usuario o email ya existe! Por favor, intenta con otro!</p>";
 }
 
 } else {
-$message = "Todos los campos no deben de estar vacios!";
+$message = "	<p class=\"alerta\">⚠️ Todos los campos no deben de estar vacios!</p>";
 }
 }
 ?>
-
-<?php if (!empty($message)) {echo "<p class=\"error\">". $message . "</p>";} ?>
+<?php if (!empty($message)) {echo $message;} ?>
 <!doctype html>
 <html lang="en">
   <head>

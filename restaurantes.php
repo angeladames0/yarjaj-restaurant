@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+require 'includes/conexion.php';
+
+$con = conectar();
+$sql = "SELECT ID,NOMBRE,DE,HASTA,DIRECCION,INFORMACION,IMG FROM RESTAURANTES";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,93 +62,38 @@ session_start();
 <br>
 <h1>Mira nuestros mejores lugares</h1>
 <div class="uk-column-1-2@s">
-    <div class="uk-container-small uk-nav uk-nav-default" style="height:370px; overflow: scroll;">
+    <div class="uk-container-small uk-nav uk-nav-default" style="height:550px; overflow: scroll;">
         
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
-            <div  style="float: left">
-                <img src="img/YARJA SanMartin.jpg" style="height: 150px;">
+    <?php foreach ($result as $row) { ?>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
+                <?php 
+                $id = $row['ID'];
+
+                ?>
+                <div  style="float: left">
+                    <img src="<?php echo $row['IMG']; ?>" alt="" style="height: 150px;">>
+                </div>
+                <div>
+                    <p value="18.4883599,-69.9030394">
+                        <b>NOMBRE:</b>
+                        <?php echo $row['NOMBRE']; ?><br>
+                        <br>
+                        <b>DIRECCION:</b>
+                        <?php echo $row['DIRECCION']; ?><br>
+                        <br>
+                        <b>INFORMACION:</b>
+                        <?php echo $row['INFORMACION']; ?><br>
+                        <br>
+                        <b>HORARIO:</b>
+                        <?php echo $row['DE']; ?> - <?php echo $row['HASTA']; ?>
+                        
+                    </p>
+                </div>   
+                
             </div>
-            <div>
-                <p value="18.4883599,-69.9030394">
-                    YARJA Avenida San Martin <br>
-                    Santo Domingo, República Dominicana <br>
-                    <br>
-                    Teléfono: (809) 832-0808 <br>
-                    <br>
-                    Lunes a Viernes de 9:00 a 22:00 <br>
-                    Sábados de 10:00 a 23:00 <br>
-                </p>
-            </div>   
+            <br>
             
-        </div>
-        <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
-            <div  style="float: left">
-                <img src="img/YARJA Monte Plata.jpeg" style="height: 150px;">
-            </div>
-            <div>
-                <p value="18.680622,-70.0151825">
-                    YARJA Monte Plata <br>
-                    Monte Plata, República Dominicana <br>
-                    <br>
-                    Teléfono: (809) 233-1855 <br>
-                    <br>
-                    Lunes a Viernes de 9:00 a 22:00 <br>
-                    Sábados de 10:00 a 22:00 <br>
-                </p>   
-            </div>
-        </div>
-        <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
-            <div  style="float: left">
-                <img src="img/YARJA Palenque.jpg" style="height: 150px;">
-            </div>
-            <div>
-                <p value="18.2552436,-70.1990756">
-                    YARJA Palenque <br>
-                    Palenque, República Dominicana <br>
-                    <br>
-                    Teléfono: (809) 555-7215 <br>
-                    <br>
-                    Lunes a Viernes de 9:00 a 22:00 <br>
-                    Sábados de 10:00 a 23:00 <br>
-                </p>
-            </div>
-        </div>
-        <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
-            <div  style="float: left">
-                <img src="img/YARJA Churchill.jpg" style="height: 160px;">
-            </div>
-            <div>
-                <p value="18.5151954,-69.8590074">
-                    YARJA Avenida Churchill <br> 
-                    Santo Domingo, República Dominicana <br>
-                    <br>
-                    Teléfono: (809) 535-1420 <br>
-                    <br>
-                    Lunes a Viernes de 9:00 a 22:00 <br>
-                    Sábados de 10:00 a 23:00 <br>
-                </p>      
-            </div>
-        </div>
-        <br>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
-            <div  style="float: left">
-                <img src="img/YARJA Independencia.jpg" style="height: 160px;">
-            </div>
-            <div>
-                <p value="18.5151954,-69.8590074">
-                    YARJA Avenida Independencia <br>
-                    Santo Domingo, República Dominicana <br>
-                    <br>
-                    Teléfono: (809) 490-0850 <br>
-                    <br>
-                    Lunes a Viernes de 9:00 a 22:00 <br>
-                    Sábados de 10:00 a 23:00 <br>
-                </p>
-            </div>    
-        </div>
+        <?php } ?>
         <br>
     </div>
     <div class="uk-container-expand">
@@ -151,12 +104,11 @@ session_start();
 
 </section>
 
-
-
 <section>
+    <hr>
 <div class="galeria">
 <div class="foto">
-    <img src="img/recomendaciones1.jpg" alt="">
+    <img src="img/recomendaciones1.jpg" alt="" style="height: 150px;">>>
 </div>
 <div class="pie">
     <strong><p>Mas visitado</p></strong>
@@ -167,7 +119,7 @@ session_start();
 
 <div class="galeria">
     <div class="foto">
-        <img src="img/recomendaciones2.jpg" alt="">
+        <img src="img/recomendaciones2.jpg" alt="" style="height: 150px;">>>
     </div>
     <div class="pie">
         <strong><p>Mejor Calificado</p></strong>
@@ -177,10 +129,19 @@ session_start();
     </div>
     <div class="galeria">
         <div class="foto">
-            <img src="img/recomendaciones3.jpg" alt="">
+            <img src="img/recomendaciones3.jpg" alt="" style="height: 150px;">>>
         </div>
         <div class="pie">
             <strong><p>Nuevo en la zona</p></strong>
+      
+        </div>        
+        </div>
+            <div class="galeria">
+        <div class="foto">
+            <img src="img/recomendaciones3.jpg" alt="" style="height: 150px;">>>
+        </div>
+        <div class="pie">
+            <strong><p>Promocion del dia</p></strong>
       
         </div>        
         </div>

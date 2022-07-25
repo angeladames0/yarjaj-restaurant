@@ -62,6 +62,9 @@ if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != ''
                                     <input type="text" class="form-control" name="longitud" id="longitud" placeholder="LONGITUD">
                                     </th>
                                     <th>
+                                    <input type="text" class="form-control" name="img" id="img" placeholder="IMG">
+                                    </th>
+                                    <th>
                                     <th><input type="submit" class="btn btn-warning">
                                     <tr>
                                     </form>
@@ -72,7 +75,7 @@ if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != ''
                                         <th>INFORMACION</th>
                                         <th>LATITUD</th>
                                         <th>LONGITUD</th>
-                                        <th></th>
+                                        <th>IMG</th>
                                         </th>
                                     </tr>
                                 </thead>
@@ -89,6 +92,7 @@ if ((isset($_SESSION['session_username']) && $_SESSION['session_username'] != ''
                                                 <td><?php  echo $row['INFORMACION']?></td>   
                                                 <td><?php  echo $row['LATITUD']?></td>  
                                                 <td><?php  echo $row['LONGITUD']?></td>   
+                                                <td><img src="<?php echo $row['IMG']; ?>" alt="" style="height: 70px;"></td> 
                                                 <th><a href="admin/acts/actualizarrestaurante.php?id=<?php echo $row['ID'] ?>" class="btn btn-success">Editar</a></th>
                                                 <th><a href="admin/deletes/borrarrestaurante.php?id=<?php echo $row['ID'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
                                             </tr>

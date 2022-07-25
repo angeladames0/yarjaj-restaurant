@@ -53,6 +53,8 @@ $row=mysqli_fetch_array($query)
                                  <input type="text" class="form-control mb-3" name="latitud" placeholder="LATITUD" value="<?php echo $row['LATITUD']  ?>">
                                  LONGITUD:
                                  <input type="text" class="form-control mb-3" name="longitud" placeholder="LONGITUD" value="<?php echo $row['LONGITUD']  ?>">
+                                 IMG:
+                                 <input type="text" class="form-control mb-3" name="img" placeholder="IMG" value="<?php echo $row['IMG']  ?>">
                                 <hr>
                             <input type="submit" class="btn btn-warning btn-block" value="Actualizar">
                     </form>
