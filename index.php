@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Restaurante YARJAJ</title>
+    <title>Inicio - YARJAJ</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -17,7 +17,7 @@ session_start();
 <body>
 
     <header>
-        <a href="#" class="logo">Restaurante Yarjaj</a>
+        <a href="#" class="logo">YARJAJ</a>
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <ul class="navbar">
@@ -26,8 +26,6 @@ session_start();
             <li><a href="nosotros.php">Nosotros</a></li>
             <?php if(isset($_SESSION['session_usuario']))
     echo "<li><a href=\"sugerencia.php\">Sugerencia</a></li>"; ?> 
-    <?php if(isset($_SESSION['session_usuario']))
-    echo "<li><a href=\"resena.php\">Reseña</a></li>"; ?> 
             <div class="bx bx-moon" id="darkmode"></div>
 
         </ul>
@@ -42,11 +40,10 @@ session_start();
 
     </header>
 
-
     <section class="home" id="home">
         <div class="home-text">
-            <h1>Restaurante YARJAJ</h1>
-            <h2>La mejor comida<br> del país</h2>
+            <h1>YARJAJ</h1>
+            <h2>AQUI! encontraras los mejores restaurantes<br> del país</h2>
     <?php if(!isset($_SESSION['session_usuario']))
     echo "<a href=\"registro.php\" class=\"btn\">Crear Cuenta</a>"; ?> 
             
@@ -121,10 +118,9 @@ session_start();
             </div>
             <div class="contact-box">
                 <h3>Links</h3>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#contact">Contacto</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="restaurantes.php">Restaurantes</a></li>
+            <li><a href="nosotros.php">Nosotros</a></li>
 
             </div>
 

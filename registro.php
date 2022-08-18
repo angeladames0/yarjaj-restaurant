@@ -55,7 +55,7 @@ $message = "	<p class=\"alerta\">⚠️ Todos los campos no deben de estar vacio
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Registro - Restaurante YARJAJ</title>
+  	<title>Registro - YARJAJ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

@@ -1,6 +1,7 @@
 /* Google Fonts */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
 * {
     margin: 0;
     padding: 0;
@@ -95,6 +96,20 @@ header {
     gap: 1.5rem;
 }
 
+#map {
+    height: 60vh;
+    width: 60hw;
+  }
+
+.home-page {
+    width: 70%;
+    min-height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
 .home-img img {
     width: 100%;
     border-radius: 150px;
@@ -137,6 +152,7 @@ header {
     gap: 1.5rem;
     align-items: center;
 }
+
 
 .about-img img {
     max-width: 80%;
@@ -652,23 +668,6 @@ p{
   border: 1px solid var(--main-color);
 }
 
-.img{
-    width: 150px;
-    height: auto;
-    margin: auto;
-    display: inline;
-    border-radius: 50%;
-    box-shadow: 5px 5px 7px black;
-    padding:  10px;
-}
-.hijo{
-    flex-direction: column;
-    display: inline-block;
-    justify-content:space-around;
-    align-items: center;
-    margin: 11%;
-    height: 5vh;
-}
 p{
     text-align: center;
     font-family: sans-serif;
@@ -698,4 +697,349 @@ p.clasificacion label:hover,
 p.clasificacion label:hover ~ label,
 p.clasificacion input:checked ~ label {
   color: #dd4;
+}
+
+
+div.img-random img{
+
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1{
+
+    color: black;
+    text-align: center;
+}
+
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 40px;
+    display: inline-block;
+}
+
+.card .content-about {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  
+    text-align: center;  
+    padding: 20px;
+    background: #fff;
+}
+
+.card .content-about .img {
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.card .content-about .img img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.card .content-about span {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: var(--main-color);
+    transform: rotate(-35deg);
+    top: -50px;
+    left: -100px;
+}
+
+.card .content-about h4 {
+    font-size: 18px;
+    color: #1a1919;
+    margin-bottom: 5px;
+}
+
+.card .content-about h6 {
+    font-size: 13px;
+    color: black;
+}
+
+.card .content-about p {
+    font-size: 13px;
+    color: #1a161f;
+    margin-top: 10px;
+}
+
+
+
+#container-tarject{
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+    background: rgba(255, 255, 255, 0.90);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 3em auto;
+    height: 250px;
+    width: 1000px;
+    position: left;
+    
+}
+
+
+
+/*  Product details  */
+.product-details {
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    padding: 20px;
+    height: 100%;
+    float: left;
+    width: 50%;
+
+}
+
+/*  Product Name */
+#container-tarject .product-details h1{
+    font-family: 'Old Standard TT', serif;
+    display: inline-block;
+    position: relative;
+    font-size: 35px;
+    color: #344055;
+    margin: 0;
+    
+}
+
+#container-tarject .product-details h1:before{
+    position: absolute;
+    content: '';
+    right: 0%; 
+    top: 0%;
+    transform: translate(25px, -15px);
+    font-family: 'Farsan', cursive;
+    display: inline-block;
+    background: var(--main-color);
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    color: #FFF;
+    margin: 0;
+    animation: chan-sh 6s ease infinite;
+
+}
+
+
+@keyframes chan-sh {
+    from  {content: 'Restaurante';}
+    to  {content: 'Nuevo';}
+    
+}
+
+/*Product Rating  */
+.hint-star {
+    display: inline-block;
+    margin-left: 0.5em;
+    color: var(--main-color);
+    width: 50%;
+}
+
+
+/* The most important information about the product */
+#container-tarject .product-details > p {
+    font-family: 'Farsan', cursive;
+    text-align: center;
+    font-size: 20px;
+    color: #7d7d7d;
+    
+}
+
+/* control */
+
+.control{
+    position: absolute;
+    bottom: 5%;
+    left: 7%;
+    
+}
+
+/* the Button */
+.btn-tarject {
+    transform: translateY(0px);
+    transition: 0.3s linear;
+    background: var(--main-color);
+    border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #eee;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.btn-tarject span {
+    font-family: 'Farsan', cursive;
+    transition: transform 0.3s;
+    display: inline-block;
+    font-size: 30px;
+    margin:0;
+    color: #FFFFFF;
+    
+}
+
+
+/* product image  */
+.product-image {
+    transition: all 0.3s ease-out;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    float: right;
+    width: 50%;
+    display: inline-block;
+}
+
+#container-tarject img {width: 100%;height: 100%;}
+
+.info {
+    background: rgba(27, 26, 26, 0.9);
+    font-family: 'Farsan', cursive;
+    transition: all 0.3s ease-out;
+    transform: translateX(-100%);
+    position: absolute;
+    line-height: 1.9;
+    text-align: left;
+    font-size: 80%;
+    cursor: no-drop;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.info h2 {text-align: center}
+.product-image:hover .info{transform: translateX(0);}
+
+.info ul li{transition: 0.3s ease;}
+.info ul li:hover{transform: translateX(50px) scale(1.3);}
+
+.product-image:hover img {transition: all 0.3s ease-out;}
+.product-image:hover img {transform: scale(1.2, 1.2);}
+
+
+
+
+.content-scroll::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.content-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.content-scroll::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.content-scroll::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.content-scroll::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.content-scroll::-webkit-scrollbar-track:hover,
+.container::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+.card-best {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 40px;
+    display: inline-block;
+}
+
+.card-best .content-about-best {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  
+    text-align: center;  
+    padding: 20px;
+    background: var(--main-color);
+}
+
+.card-best .content-about-best .img-best {
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.card-best .content-about-best .img-best img {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    border-radius: 5%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.card-best .content-about-best span {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: var(--main-color);
+    transform: rotate(-35deg);
+    top: -50px;
+    left: -100px;
+}
+
+.card-best .content-about-best h4 {
+    font-size: 18px;
+    color: #1a1919;
+    margin-bottom: 5px;
+}
+
+.card-best .content-about-best h6 {
+    font-size: 13px;
+    color: black;
+}
+
+.card-best .content-about-best p {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 52px;
+
 }

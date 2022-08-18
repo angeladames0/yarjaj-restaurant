@@ -10,28 +10,23 @@ $row = mysqli_fetch_array($result);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resturantes - Restaurante YARJAJ</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+    <title>Resturantes - YARJAJ</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="css/paraRecomendacion.css">
     <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
 
 </head>
 
 <body>
 
     <header>
-        <a href="#" class="logo">Restaurante Yarjaj</a>
+        <a href="#" class="logo">YARJAJ</a>
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <ul class="navbar">
@@ -40,8 +35,6 @@ $row = mysqli_fetch_array($result);
             <li><a href="nosotros.php">Nosotros</a></li>
             <?php if(isset($_SESSION['session_usuario']))
     echo "<li><a href=\"sugerencia.php\">Sugerencia</a></li>"; ?> 
-        <?php if(isset($_SESSION['session_usuario']))
-    echo "<li><a href=\"resena.php\">Reseña</a></li>"; ?> 
             <div class="bx bx-moon" id="darkmode"></div>
 
         </ul>
@@ -52,6 +45,7 @@ $row = mysqli_fetch_array($result);
     echo "<a href=\"includes/desloguear.php\" class=\"btn2\">Cerrar Sesión</a>"; ?> 
     <?php if(!isset($_SESSION['session_usuario']))
     echo "<a href=\"login.php\" class=\"btn2\">Iniciar Sesion</a>"; ?> 
+    
 
     </header>
 
@@ -61,89 +55,87 @@ $row = mysqli_fetch_array($result);
 
 <br>
 <h1>Mira nuestros mejores lugares</h1>
-<div class="uk-column-1-2@s">
-    <div class="uk-container-small uk-nav uk-nav-default" style="height:550px; overflow: scroll;">
+<div>
+    <div class="content-scroll" style="height:700px; overflow: scroll;">
         
     <?php foreach ($result as $row) { ?>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-light">
                 <?php 
                 $id = $row['ID'];
 
                 ?>
-                <div  style="float: left">
-                    <img src="<?php echo $row['IMG']; ?>" alt="" style="height: 150px;">>
-                </div>
-                <div>
-                    <p value="18.4883599,-69.9030394">
-                        <b>NOMBRE:</b>
-                        <?php echo $row['NOMBRE']; ?><br>
-                        <br>
-                        <b>DIRECCION:</b>
-                        <?php echo $row['DIRECCION']; ?><br>
-                        <br>
-                        <b>INFORMACION:</b>
-                        <?php echo $row['INFORMACION']; ?><br>
-                        <br>
-                        <b>HORARIO:</b>
-                        <?php echo $row['DE']; ?> - <?php echo $row['HASTA']; ?>
-                        
-                    </p>
-                </div>   
-                
-            </div>
-            <br>
-            
-        <?php } ?>
-        <br>
-    </div>
-    <div class="uk-container-expand">
-        <div id="map"></div>
-    </div>
-    
-</div>
 
+                    <div id="container-tarject">    
+                        <div class="product-details">
+
+                        <h1><?php echo $row['NOMBRE']; ?></h1>
+                        
+                            <p class="information"><?php echo $row['INFORMACION']; ?></p>
+
+                            
+                    <div class="control">
+                        <button class="btn-tarject">
+                       <a href="page.php?id=<?php echo $id?>"  target="_blank">Ver</a>
+                     </button> 
+                    </div>          
+                    </div>
+                        
+
+                    <div class="product-image">
+                        <img src="<?php echo $row['IMG']; ?>">
+                    <div class="info">
+                        <h2>Mas informacion</h2>
+                        <ul>
+                            <li><strong>Direccion: </strong><?php echo $row['DIRECCION']; ?></li>
+                            <li><strong>Horario: </strong><?php echo $row['DE']; ?> - <?php echo $row['HASTA']; ?></li>
+                            <h2>YARJAJ.tk</h2>
+                        </ul>
+                    </div>
+                    </div>
+                    </div>
+                    <?php } ?>
+    <div class="uk-container-expand">
+    </div>
 </section>
+
 
 <section>
     <hr>
-<div class="galeria">
-<div class="foto">
-    <img src="img/recomendaciones1.jpg" alt="" style="height: 150px;">>>
+    <h1>AREA</h1>
+<div class="card-best">
+        <div class="content-about-best">
+            <div class="img-best">
+    <img src="img/recomendaciones1.jpg">
 </div>
-<div class="pie">
-    <strong><p>Mas visitado</p></strong>
-  
+<strong><p>Mas visitado</p></strong>
+</div>
 </div>
 
-</div>
 
-<div class="galeria">
-    <div class="foto">
-        <img src="img/recomendaciones2.jpg" alt="" style="height: 150px;">>>
+<div class="card-best">
+    <div class="content-about-best">
+            <div class="img-best">
+        <img src="img/recomendaciones2.jpg">
     </div>
-    <div class="pie">
-        <strong><p>Mejor Calificado</p></strong>
-      
+        <strong><p>Mejor calificado ✰</p></strong>
     </div>
-    
     </div>
-    <div class="galeria">
-        <div class="foto">
-            <img src="img/recomendaciones3.jpg" alt="" style="height: 150px;">>>
+
+<div class="card-best">
+    <div class="content-about-best">
+            <div class="img-best">
+            <img src="img/recomendaciones3.jpg">
         </div>
-        <div class="pie">
-            <strong><p>Nuevo en la zona</p></strong>
-      
-        </div>        
+            <strong><p>Nuevo en la zona</p></strong>     
         </div>
-            <div class="galeria">
-        <div class="foto">
-            <img src="img/recomendaciones3.jpg" alt="" style="height: 150px;">>>
         </div>
-        <div class="pie">
-            <strong><p>Promocion del dia</p></strong>
-      
-        </div>        
+
+<div class="card-best">
+    <div class="content-about-best">
+            <div class="img-best">
+            <img src="img/recomendaciones3.jpg">
+        </div>
+            <strong><p>Promocion del dia</p></strong>      
+        </div>
         </div>
 
     </section>
@@ -163,10 +155,9 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="contact-box">
                 <h3>Links</h3>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#contact">Contacto</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="restaurantes.php">Restaurantes</a></li>
+            <li><a href="nosotros.php">Nosotros</a></li>
 
             </div>
 
@@ -180,13 +171,8 @@ $row = mysqli_fetch_array($result);
 
         <!-- Scroll Reveal -->
         <script src="https://unpkg.com/scrollreveal"></script>
-
-         <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
- integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
- crossorigin=""></script>
         <!-- Link To JavaScript -->
         <script src="index.html"></script>
-         <script src="js/mapa.js"></script>
     </body>
 
     </html>

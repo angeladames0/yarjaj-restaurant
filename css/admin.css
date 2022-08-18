@@ -26,7 +26,14 @@
     --p-font: 0.9rem;
 }
 
-.btn {
-    color: #fff;
+table {
 
+  overflow-x:auto;
+}
+table td {
+  word-wrap: break-word;
+  max-width: 400px;
+}
 
+ td {
+  white-space:inherit;

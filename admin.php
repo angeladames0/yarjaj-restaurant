@@ -19,7 +19,7 @@ $query=mysqli_query($con, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Restaurante YARJAJ</title>
+    <title>Inicio - YARJAJ</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -30,7 +30,7 @@ $query=mysqli_query($con, $sql);
 <body>
 
     <header>
-        <a href="#" class="logo">Restaurante Yarjaj</a>
+        <a href="#" class="logo">YARJAJ</a>
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <ul class="navbar">

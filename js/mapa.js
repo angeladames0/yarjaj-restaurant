@@ -1,11 +1,10 @@
-let map = L.map('map').setView([4.639386,-74.082412],6)
+var jsvar = '<?=$cor1?>';
 
-//Agregar tilelAyer mapa base desde openstreetmap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+function myMap() {
 
-document.getElementById('select-location').addEventListener('change',function(e){
-  let coords = e.target.value.split(",");
-  map.flyTo(coords,13);
-})
+var mapProp= {
+  center:new google.maps.LatLng(11.126042648897803, -75.85847375879061),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
